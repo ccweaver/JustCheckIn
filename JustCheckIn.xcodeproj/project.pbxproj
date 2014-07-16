@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4908520F19760D7000EBEFFE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4908520E19760D7000EBEFFE /* Storyboard.storyboard */; };
 		493D0185197607E1007BC189 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D0184197607E1007BC189 /* Foundation.framework */; };
 		493D0187197607E1007BC189 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D0186197607E1007BC189 /* CoreGraphics.framework */; };
 		493D0189197607E1007BC189 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D0188197607E1007BC189 /* UIKit.framework */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4908520E19760D7000EBEFFE /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		493D0181197607E1007BC189 /* JustCheckIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustCheckIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		493D0184197607E1007BC189 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		493D0186197607E1007BC189 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,6 +111,7 @@
 			children = (
 				493D0193197607E1007BC189 /* XYZAppDelegate.h */,
 				493D0194197607E1007BC189 /* XYZAppDelegate.m */,
+				4908520E19760D7000EBEFFE /* Storyboard.storyboard */,
 				493D0196197607E1007BC189 /* Images.xcassets */,
 				493D018B197607E1007BC189 /* Supporting Files */,
 			);
@@ -222,6 +225,7 @@
 			files = (
 				493D018F197607E1007BC189 /* InfoPlist.strings in Resources */,
 				493D0197197607E1007BC189 /* Images.xcassets in Resources */,
+				4908520F19760D7000EBEFFE /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +442,7 @@
 				493D01AF197607E1007BC189 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		493D01B0197607E1007BC189 /* Build configuration list for PBXNativeTarget "JustCheckInTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +451,7 @@
 				493D01B2197607E1007BC189 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
