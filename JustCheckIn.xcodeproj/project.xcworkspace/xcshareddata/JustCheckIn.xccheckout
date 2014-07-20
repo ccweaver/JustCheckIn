@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3FFBF6F2-0DC6-40CC-848A-78A2267AE7F5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JustCheckIn</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BCCC7A3E-CD94-4109-B3EB-89A93B4F0987</key>
+		<string>ssh://github.com/ccweaver/JustCheckIn.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JustCheckIn.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BCCC7A3E-CD94-4109-B3EB-89A93B4F0987</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/ccweaver/JustCheckIn.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BCCC7A3E-CD94-4109-B3EB-89A93B4F0987</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BCCC7A3E-CD94-4109-B3EB-89A93B4F0987</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JustCheckIn</string>
+		</dict>
+	</array>
+</dict>
+</plist>
