@@ -21,6 +21,7 @@
 		493D01A8197607E1007BC189 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 493D01A6197607E1007BC189 /* InfoPlist.strings */; };
 		493D01AA197607E1007BC189 /* JustCheckInTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 493D01A9197607E1007BC189 /* JustCheckInTests.m */; };
 		49841AB9197C37940053E607 /* XYZHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49841AB8197C37940053E607 /* XYZHomeTableViewController.m */; };
+		49841ABC197C9A970053E607 /* XYZBetterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49841ABB197C9A970053E607 /* XYZBetterButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		493D01A9197607E1007BC189 /* JustCheckInTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JustCheckInTests.m; sourceTree = "<group>"; };
 		49841AB7197C37940053E607 /* XYZHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZHomeTableViewController.h; sourceTree = "<group>"; };
 		49841AB8197C37940053E607 /* XYZHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZHomeTableViewController.m; sourceTree = "<group>"; };
+		49841ABA197C9A970053E607 /* XYZBetterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZBetterButton.h; sourceTree = "<group>"; };
+		49841ABB197C9A970053E607 /* XYZBetterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZBetterButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				493D0193197607E1007BC189 /* XYZAppDelegate.h */,
 				493D0194197607E1007BC189 /* XYZAppDelegate.m */,
 				4908520E19760D7000EBEFFE /* Storyboard.storyboard */,
+				49841ABA197C9A970053E607 /* XYZBetterButton.h */,
+				49841ABB197C9A970053E607 /* XYZBetterButton.m */,
 				49841AB7197C37940053E607 /* XYZHomeTableViewController.h */,
 				49841AB8197C37940053E607 /* XYZHomeTableViewController.m */,
 				493D0196197607E1007BC189 /* Images.xcassets */,
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				493D0195197607E1007BC189 /* XYZAppDelegate.m in Sources */,
+				49841ABC197C9A970053E607 /* XYZBetterButton.m in Sources */,
 				49841AB9197C37940053E607 /* XYZHomeTableViewController.m in Sources */,
 				493D0191197607E1007BC189 /* main.m in Sources */,
 			);
