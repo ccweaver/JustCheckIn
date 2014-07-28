@@ -10,4 +10,6 @@
 
 @interface XYZHomeTableViewController : UITableViewController
 
+- (IBAction)unwindToHome:(UIStoryboardSegue *)segue;
+
 @end

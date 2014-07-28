@@ -7,9 +7,11 @@
 //
 
 #import "XYZHomeTableViewController.h"
+#import "XYZCheckIn.h"
+#import "XYZCreateCheckInViewController.h"
 
 @interface XYZHomeTableViewController ()
-
+@property NSMutableArray *checkIns;
 @end
 
 @implementation XYZHomeTableViewController
@@ -23,9 +25,20 @@
     return self;
 }
 
+- (IBAction)unwindToHome:(UIStoryboardSegue *)segue
+{
+    XYZCreateCheckInViewController *source = [segue sourceViewController];
+    XYZCheckIn *checkIn = source.checkIn;
+    if (checkIn != nil) {
+        [self.checkIns addObject:checkIn];
+        [self.tableView reloadData];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.checkIns = [[NSMutableArray alloc] init];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -51,19 +64,47 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 2;
+    return [self.checkIns count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    static NSString *CellIdentifier = @"ListPrototypeCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    NSString *MyDate;
+	NSDate *now = [NSDate date];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"' on' MM-dd '@' hh:mm"];
+	MyDate = [dateFormatter stringFromDate:now];
+
+    
+    XYZCheckIn *checkIn = [self.checkIns objectAtIndex:indexPath.row];
+    
+    NSString *MyLabel = [checkIn.description stringByAppendingString:MyDate];
+    
+    cell.textLabel.text = MyLabel;
+    
+    if (checkIn.completed){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    if (fabs([checkIn.checkInDate timeIntervalSinceDate:now]) < 1) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

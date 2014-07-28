@@ -20,8 +20,11 @@
 		493D01A0197607E1007BC189 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D0188197607E1007BC189 /* UIKit.framework */; };
 		493D01A8197607E1007BC189 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 493D01A6197607E1007BC189 /* InfoPlist.strings */; };
 		493D01AA197607E1007BC189 /* JustCheckInTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 493D01A9197607E1007BC189 /* JustCheckInTests.m */; };
+		49423BCA19805ED600914BD3 /* XYZCreateCheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49423BC919805ED600914BD3 /* XYZCreateCheckInViewController.m */; };
 		49841AB9197C37940053E607 /* XYZHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49841AB8197C37940053E607 /* XYZHomeTableViewController.m */; };
-		49841ABC197C9A970053E607 /* XYZBetterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49841ABB197C9A970053E607 /* XYZBetterButton.m */; };
+		49DCDC64197F793000FF9BF1 /* XYZCreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCDC63197F793000FF9BF1 /* XYZCreateAccountViewController.m */; };
+		49DCDC6719800BAA00FF9BF1 /* XYZSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCDC6619800BAA00FF9BF1 /* XYZSignInViewController.m */; };
+		49DCDC6A1980221E00FF9BF1 /* XYZCheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DCDC691980221E00FF9BF1 /* XYZCheckIn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +55,16 @@
 		493D01A5197607E1007BC189 /* JustCheckInTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JustCheckInTests-Info.plist"; sourceTree = "<group>"; };
 		493D01A7197607E1007BC189 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		493D01A9197607E1007BC189 /* JustCheckInTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JustCheckInTests.m; sourceTree = "<group>"; };
+		49423BC819805ED600914BD3 /* XYZCreateCheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYZCreateCheckInViewController.h; path = ../XYZCreateCheckInViewController.h; sourceTree = "<group>"; };
+		49423BC919805ED600914BD3 /* XYZCreateCheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYZCreateCheckInViewController.m; path = ../XYZCreateCheckInViewController.m; sourceTree = "<group>"; };
 		49841AB7197C37940053E607 /* XYZHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZHomeTableViewController.h; sourceTree = "<group>"; };
 		49841AB8197C37940053E607 /* XYZHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZHomeTableViewController.m; sourceTree = "<group>"; };
-		49841ABA197C9A970053E607 /* XYZBetterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZBetterButton.h; sourceTree = "<group>"; };
-		49841ABB197C9A970053E607 /* XYZBetterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZBetterButton.m; sourceTree = "<group>"; };
+		49DCDC62197F793000FF9BF1 /* XYZCreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYZCreateAccountViewController.h; path = ../XYZCreateAccountViewController.h; sourceTree = "<group>"; };
+		49DCDC63197F793000FF9BF1 /* XYZCreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYZCreateAccountViewController.m; path = ../XYZCreateAccountViewController.m; sourceTree = "<group>"; };
+		49DCDC6519800BAA00FF9BF1 /* XYZSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSignInViewController.h; sourceTree = "<group>"; };
+		49DCDC6619800BAA00FF9BF1 /* XYZSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSignInViewController.m; sourceTree = "<group>"; };
+		49DCDC681980221E00FF9BF1 /* XYZCheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCheckIn.h; sourceTree = "<group>"; };
+		49DCDC691980221E00FF9BF1 /* XYZCheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCheckIn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +124,19 @@
 		493D018A197607E1007BC189 /* JustCheckIn */ = {
 			isa = PBXGroup;
 			children = (
+				49DCDC62197F793000FF9BF1 /* XYZCreateAccountViewController.h */,
+				49DCDC63197F793000FF9BF1 /* XYZCreateAccountViewController.m */,
 				493D0193197607E1007BC189 /* XYZAppDelegate.h */,
 				493D0194197607E1007BC189 /* XYZAppDelegate.m */,
 				4908520E19760D7000EBEFFE /* Storyboard.storyboard */,
-				49841ABA197C9A970053E607 /* XYZBetterButton.h */,
-				49841ABB197C9A970053E607 /* XYZBetterButton.m */,
+				49423BC819805ED600914BD3 /* XYZCreateCheckInViewController.h */,
+				49423BC919805ED600914BD3 /* XYZCreateCheckInViewController.m */,
 				49841AB7197C37940053E607 /* XYZHomeTableViewController.h */,
 				49841AB8197C37940053E607 /* XYZHomeTableViewController.m */,
+				49DCDC681980221E00FF9BF1 /* XYZCheckIn.h */,
+				49DCDC691980221E00FF9BF1 /* XYZCheckIn.m */,
+				49DCDC6519800BAA00FF9BF1 /* XYZSignInViewController.h */,
+				49DCDC6619800BAA00FF9BF1 /* XYZSignInViewController.m */,
 				493D0196197607E1007BC189 /* Images.xcassets */,
 				493D018B197607E1007BC189 /* Supporting Files */,
 			);
@@ -254,8 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DCDC6719800BAA00FF9BF1 /* XYZSignInViewController.m in Sources */,
+				49DCDC64197F793000FF9BF1 /* XYZCreateAccountViewController.m in Sources */,
 				493D0195197607E1007BC189 /* XYZAppDelegate.m in Sources */,
-				49841ABC197C9A970053E607 /* XYZBetterButton.m in Sources */,
+				49423BCA19805ED600914BD3 /* XYZCreateCheckInViewController.m in Sources */,
+				49DCDC6A1980221E00FF9BF1 /* XYZCheckIn.m in Sources */,
 				49841AB9197C37940053E607 /* XYZHomeTableViewController.m in Sources */,
 				493D0191197607E1007BC189 /* main.m in Sources */,
 			);
