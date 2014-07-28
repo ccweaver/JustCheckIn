@@ -58,7 +58,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -95,12 +95,6 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    if (fabs([checkIn.checkInDate timeIntervalSinceDate:now]) < 1) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-    else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
     
     return cell;
 }
