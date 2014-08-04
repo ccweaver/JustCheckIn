@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4908520F19760D7000EBEFFE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4908520E19760D7000EBEFFE /* Storyboard.storyboard */; };
+		492257351986EFC4006BC280 /* XYZBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 492257341986EFC4006BC280 /* XYZBackgroundLayer.m */; };
 		493D0185197607E1007BC189 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D0184197607E1007BC189 /* Foundation.framework */; };
 		493D0187197607E1007BC189 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D0186197607E1007BC189 /* CoreGraphics.framework */; };
 		493D0189197607E1007BC189 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493D0188197607E1007BC189 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		4908520E19760D7000EBEFFE /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		492257331986EFC4006BC280 /* XYZBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZBackgroundLayer.h; sourceTree = "<group>"; };
+		492257341986EFC4006BC280 /* XYZBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZBackgroundLayer.m; sourceTree = "<group>"; };
 		493D0181197607E1007BC189 /* JustCheckIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustCheckIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		493D0184197607E1007BC189 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		493D0186197607E1007BC189 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,6 +140,8 @@
 				49DCDC691980221E00FF9BF1 /* XYZCheckIn.m */,
 				49DCDC6519800BAA00FF9BF1 /* XYZSignInViewController.h */,
 				49DCDC6619800BAA00FF9BF1 /* XYZSignInViewController.m */,
+				492257331986EFC4006BC280 /* XYZBackgroundLayer.h */,
+				492257341986EFC4006BC280 /* XYZBackgroundLayer.m */,
 				493D0196197607E1007BC189 /* Images.xcassets */,
 				493D018B197607E1007BC189 /* Supporting Files */,
 			);
@@ -276,6 +281,7 @@
 				49DCDC6A1980221E00FF9BF1 /* XYZCheckIn.m in Sources */,
 				49841AB9197C37940053E607 /* XYZHomeTableViewController.m in Sources */,
 				493D0191197607E1007BC189 /* main.m in Sources */,
+				492257351986EFC4006BC280 /* XYZBackgroundLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

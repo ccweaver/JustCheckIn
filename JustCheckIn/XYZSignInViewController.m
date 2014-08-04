@@ -7,16 +7,53 @@
 //
 
 #import "XYZSignInViewController.h"
+#import "XYZBackgroundLayer.h"
 
 @interface XYZSignInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *sign_in_button;
 @property (weak, nonatomic) IBOutlet UIButton *create_account_button;
+@property (weak, nonatomic) IBOutlet UILabel *sign_in_failed;
 
 @end
 
 @implementation XYZSignInViewController
+
+
+#pragma mark NSURLConnection Delegate Methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    // A response has been received, this is where we initialize the instance var you created
+    // so that we can append data to it in the didReceiveData method
+    // Furthermore, this method is called each time there is a redirect so reinitializing it
+    // also serves to clear it
+    _responseData = [[NSMutableData alloc] init];
+    self.username.placeholder = @"butthole";
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    // Append the new data to the instance variable you declared
+    [_responseData appendData:data];
+    self.password.placeholder = @"taint hairs";
+}
+
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
+                  willCacheResponse:(NSCachedURLResponse*)cachedResponse {
+    // Return nil to indicate not necessary to store a cached response for this connection
+    return nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    // The request is complete and data has been received
+    // You can parse the stuff in your instance variable now
+    
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    // The request has failed for some reason!
+    // Check the error var
+}
 
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
@@ -24,10 +61,22 @@
         return YES;
     }
     if ([identifier isEqualToString:@"SignInSeg"]) {
+        
+        // Create the request.
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ec2-54-200-21-53.us-west-2.compute.amazonaws.com/~bsturm/login_checkIn.php"]];
+        
+        // Create url connection and fire request
+        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        
         if ([self.username.text isEqualToString:@"campbell"]) {
             return YES;
         }
+        if (self.username.text.length == 0 || self.password.text.length == 0) {
+            self.sign_in_failed.text = @"Please enter a Username and Password";
+        }
     }
+
     return NO;
 }
 
@@ -51,6 +100,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.password.secureTextEntry = YES;
+    
+    CAGradientLayer *bgLayer = [XYZBackgroundLayer blueGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    // resize your layers based on the view’s new bounds
+    CAGradientLayer *bgLayer = [XYZBackgroundLayer blueGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer replaceSublayer:[[self.view.layer sublayers] objectAtIndex:0] with:bgLayer];
 }
 
 - (void)didReceiveMemoryWarning

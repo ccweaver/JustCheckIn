@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XYZSignInViewController : UIViewController
+@interface XYZSignInViewController : UIViewController<NSURLConnectionDelegate> {
 
+NSMutableData *_responseData;
+}
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 
 @end

@@ -145,8 +145,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDj-EN-MGz">
                                 <rect key="frame" x="112" y="152" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPq-ih-MgZ">
                                 <rect key="frame" x="76" y="210" width="168" height="50"/>
@@ -196,6 +197,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be7-Lg-hNP">
+                                <rect key="frame" x="20" y="73" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.8403320312" green="0.0" blue="0.01980975217" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -216,6 +224,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="create_account_button" destination="vrN-Mu-Z7Z" id="y87-oe-aLO"/>
                         <outlet property="password" destination="fDj-EN-MGz" id="dJT-uc-Ym5"/>
                         <outlet property="sign_in_button" destination="sPq-ih-MgZ" id="DWA-gs-oNS"/>
+                        <outlet property="sign_in_failed" destination="be7-Lg-hNP" id="iVK-ld-dTo"/>
                         <outlet property="username" destination="tgn-eP-Qrk" id="qaU-R7-NfQ"/>
                     </connections>
                 </viewController>
@@ -369,10 +378,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Create Account" id="g8X-hk-IYz">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="tWh-op-Kgc">
                             <connections>
-                                <segue destination="6dS-7K-wIL" kind="unwind" unwindAction="unwindToList:" id="6zw-TU-iF4"/>
+                                <segue destination="6dS-7K-wIL" kind="unwind" identifier="cancel" unwindAction="unwindToList:" id="6zw-TU-iF4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="create_account_button" destination="Zs2-gI-KUQ" id="oAL-Kx-SnB"/>
+                        <outlet property="email" destination="daB-Vh-cIA" id="L49-jR-Tvf"/>
+                        <outlet property="password" destination="4a0-hF-9o9" id="VIq-gz-BsE"/>
+                        <outlet property="password_repeat" destination="0zy-MR-wpm" id="mWw-oE-q7i"/>
+                        <outlet property="username" destination="pHu-Vp-FPC" id="kFR-mT-cye"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vf-LA-2RZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6dS-7K-wIL" userLabel="Exit" sceneMemberID="exit"/>
