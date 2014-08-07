@@ -170,9 +170,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrN-Mu-Z7Z">
                                 <rect key="frame" x="76" y="289" width="168" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.4189453125" green="0.39346325160000001" blue="0.38881266910000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Create Account">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -337,7 +337,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="IxN-LT-Lk9" kind="modal" id="rTu-jt-k7Y"/>
+                                    <segue destination="IxN-LT-Lk9" kind="modal" identifier="create" id="rTu-jt-k7Y"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReEnter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdC-JE-wYb">
@@ -352,6 +352,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozu-Mn-5bs">
+                                <rect key="frame" x="20" y="68" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.095244964000000001" blue="0.095429171120000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -371,6 +378,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="mmH-KT-q4T" firstAttribute="top" secondItem="WH0-lu-D8C" secondAttribute="bottom" constant="33" id="eon-TV-38y"/>
                             <constraint firstAttribute="trailing" secondItem="0zy-MR-wpm" secondAttribute="trailing" constant="20" id="iLU-hU-ThZ"/>
                             <constraint firstItem="4a0-hF-9o9" firstAttribute="leading" secondItem="zIU-nJ-LrD" secondAttribute="trailing" constant="11" id="iu7-tt-qVB"/>
+                            <constraint firstItem="pHu-Vp-FPC" firstAttribute="top" secondItem="ozu-Mn-5bs" secondAttribute="bottom" constant="4" id="l2l-rr-Jjr"/>
                             <constraint firstItem="mmH-KT-q4T" firstAttribute="leading" secondItem="DWO-HB-AuU" secondAttribute="leading" constant="20" id="pJt-QO-Nxs"/>
                             <constraint firstAttribute="trailing" secondItem="daB-Vh-cIA" secondAttribute="trailing" constant="20" id="qlw-FA-oA7"/>
                         </constraints>
@@ -384,6 +392,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </navigationItem>
                     <connections>
                         <outlet property="create_account_button" destination="Zs2-gI-KUQ" id="oAL-Kx-SnB"/>
+                        <outlet property="create_failed" destination="ozu-Mn-5bs" id="wQN-SQ-Le7"/>
                         <outlet property="email" destination="daB-Vh-cIA" id="L49-jR-Tvf"/>
                         <outlet property="password" destination="4a0-hF-9o9" id="VIq-gz-BsE"/>
                         <outlet property="password_repeat" destination="0zy-MR-wpm" id="mWw-oE-q7i"/>
@@ -402,6 +411,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hHG-4G-8MD"/>
+        <segue reference="rTu-jt-k7Y"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import "XYZCreateAccountViewController.h"
+#import "XYZBackgroundLayer.h"
 
 @interface XYZCreateAccountViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
@@ -14,35 +15,89 @@
 @property (weak, nonatomic) IBOutlet UITextField *password_repeat;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UIButton *create_account_button;
+@property (weak, nonatomic) IBOutlet UILabel *create_failed;
 
 @end
 
 @implementation XYZCreateAccountViewController
 
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    // resize your layers based on the view’s new bounds
+    CAGradientLayer *bgLayer = [XYZBackgroundLayer blueGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer replaceSublayer:[[self.view.layer sublayers] objectAtIndex:0] with:bgLayer];
+}
+
+
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if ([identifier isEqualToString:@"cancel"]) {
         return YES;
     }
-    if (self.username.text.length == 0) {
-        self.username.placeholder = @"Please enter a username";
-        return NO;
+    if ([identifier isEqualToString:@"create"]) {
+        
+        
+        if (self.username.text.length == 0) {
+            self.create_failed.text = @"Please enter a username";
+            return NO;
+        }
+        if (self.password.text.length == 0) {
+            self.create_failed.text = @"Please enter a Password";
+            return NO;
+        }
+        if (![self.password_repeat.text isEqualToString:self.password.text]) {
+            self.create_failed.text = @"Passwords don't match";
+            return NO;
+        }
+        
+        if (self.email.text.length == 0) {
+            self.create_failed.text = @"Please Enter an Email Address";
+            return NO;
+        }
+        
+        
+        NSString *post = [NSString stringWithFormat:@"username=%@&password=%@&email=%@", self.username.text, self.password.text, self.email.text];
+        
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        
+        NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+        
+        // Create the request.
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://ec2-54-200-21-53.us-west-2.compute.amazonaws.com/~bsturm/checkIn_register.php"]];
+        
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postData];
+        
+        
+        NSError* error;
+        NSHTTPURLResponse *response = nil;
+        NSData *responseData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        NSString *stringResponse = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"Response ==> %@", stringResponse);
+        
+        
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:responseData
+                              options:kNilOptions
+                              error:&error];
+        NSLog(@"jsonObject is %@",json);
+        
+        NSString* success = [json objectForKey:@"success"];
+        
+        NSLog(@"success: %@", success);
+        
+        if ([success intValue] == 1) {
+            return YES;
+        }
+        else {
+            self.create_failed.text = @"Username is Taken";
+            return NO;
+        }
+        
     }
-    else {
-        self.username.textColor = [UIColor blackColor];
-        self.username.placeholder = @"";
-    }
-    if (self.password.text.length == 0) {
-        self.password.placeholder = @"Please enter a Password";
-        return NO;
-    }
-    if (![self.password_repeat.text isEqualToString:self.password.text]) {
-        self.password_repeat.placeholder = @"Passwords don't match";
-    }
-    
-    if (self.email.text.length == 0) {
-        return NO;
-    }
-    return YES;
+    return NO;
     
 }
 
@@ -61,6 +116,10 @@
     // Do any additional setup after loading the view.
     self.password.secureTextEntry = YES;
     self.password_repeat.secureTextEntry = YES;
+    
+    CAGradientLayer *bgLayer = [XYZBackgroundLayer blueGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
