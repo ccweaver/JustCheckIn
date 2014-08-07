@@ -29,13 +29,13 @@
     // Furthermore, this method is called each time there is a redirect so reinitializing it
     // also serves to clear it
     _responseData = [[NSMutableData alloc] init];
-    self.username.placeholder = @"butthole";
+    self.username.placeholder = @"test1";
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     // Append the new data to the instance variable you declared
     [_responseData appendData:data];
-    self.password.placeholder = @"taint hairs";
+    self.password.placeholder = @"test2";
 }
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection
@@ -47,7 +47,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // The request is complete and data has been received
     // You can parse the stuff in your instance variable now
-    
+    self.sign_in_failed.text = @"a;lskdjf";
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -63,10 +63,22 @@
     if ([identifier isEqualToString:@"SignInSeg"]) {
         
         // Create the request.
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ec2-54-200-21-53.us-west-2.compute.amazonaws.com/~bsturm/login_checkIn.php"]];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://ec2-54-200-21-53.us-west-2.compute.amazonaws.com/~bsturm/php_working_check.php"]];
+        
+         // Specify that it will be a POST request
+         request.HTTPMethod = @"POST";
+         
+         // This is how we set header fields
+         [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+        
+        // Convert your data and set your request's HTTPBody property
+        NSString *stringData = @"key1=val1&key2=val2";
+        
+        NSData *requestBodyData = [stringData dataUsingEncoding:NSUTF8StringEncoding];
+        request.HTTPBody = requestBodyData;
         
         // Create url connection and fire request
-        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        NSURLConnection *conn = [NSURLConnection connectionWithRequest:request delegate:self];
         
         
         if ([self.username.text isEqualToString:@"campbell"]) {

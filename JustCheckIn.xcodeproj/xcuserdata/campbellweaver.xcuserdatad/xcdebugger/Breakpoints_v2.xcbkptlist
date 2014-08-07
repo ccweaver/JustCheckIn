@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustCheckIn/XYZSignInViewController.m"
-            timestampString = "428803615.017565"
+            timestampString = "429126284.359321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-willAnimateRotationToInterfaceOrientation:duration:"
             landmarkType = "5">
          </BreakpointContent>
@@ -89,7 +89,7 @@
                   symbolName = "-[XYZSignInViewController password]"
                   moduleName = "JustCheckIn"
                   urlString = "file:///Users/campbellweaver/Documents/Personal/iOS%20Dev/JustCheckIn/JustCheckIn/XYZSignInViewController.m"
-                  timestampString = "428803424.351202"
+                  timestampString = "429126284.85003"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -103,7 +103,7 @@
                   symbolName = "-[XYZSignInViewController setPassword:]"
                   moduleName = "JustCheckIn"
                   urlString = "file:///Users/campbellweaver/Documents/Personal/iOS%20Dev/JustCheckIn/JustCheckIn/XYZSignInViewController.m"
-                  timestampString = "428803424.351377"
+                  timestampString = "429126284.850444"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -111,6 +111,38 @@
                   offsetFromSymbolStart = "31">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JustCheckIn/XYZSignInViewController.m"
+            timestampString = "429126284.359321"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-shouldPerformSegueWithIdentifier:sender:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JustCheckIn/XYZSignInViewController.m"
+            timestampString = "429126284.359321"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-shouldPerformSegueWithIdentifier:sender:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
